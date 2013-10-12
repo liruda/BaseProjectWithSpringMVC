@@ -1,0 +1,30 @@
+This is a very base project included:
+- Spring MVC 3.2.2
+- HTML 5 Boilerplate
+- Bootstrap
+
+To be added:
+- Hibernate
+- Spring security
+
+Prerequisite:
+ - gradle installed
+ - JDK
+
+
+Usage:
+- Windows
+	1. go to project root directory
+	2. run setenv.cmd
+	3. run "gradle idea" or "gradle eclipse"
+	4. run "gradle jettyRunWar"
+	5. open the project in your IntelliJ/Eclipse
+
+
+Folder structure:
+
+-liruda
+   -src
+        -main
+            -java
+            -webapp
