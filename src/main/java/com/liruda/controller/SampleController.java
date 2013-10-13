@@ -11,13 +11,13 @@ import java.util.Locale;
 @Controller
 public class SampleController {
 
-	@RequestMapping("home")
+	@RequestMapping("boilerplate")
 	public String loadHomePage(Model m) {
         Date now = new Date();
 
         DateFormatter df = new DateFormatter("yyyy/MM/dd, HH:mm:ss, EEEE");
 		m.addAttribute("name", "liruda");
         m.addAttribute("serverTime", df.print(now, Locale.SIMPLIFIED_CHINESE));
-		return "home";
+		return "html5boilerplate";
 	}
 }
