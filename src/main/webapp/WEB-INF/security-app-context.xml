@@ -7,17 +7,28 @@
                     http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/welcome*" access="ROLE_ADMIN" />
+        <intercept-url pattern="/welcome*" access="ROLE_ADMIN,ROLE_USER" />
+        <form-login login-page="/"
+                    default-target-url="/welcome"
+                    authentication-failure-url="/loginError" />
+
+        <logout
+                invalidate-session="true"
+                logout-success-url="/"
+                />
     </http>
 
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="admin" password="admin" authorities="ROLE_ADMIN" />
-                <user name="dianne" password="emu" authorities="teller, user" />
-                <user name="scott" password="wombat" authorities="user" />
-                <user name="peter" password="opal" authorities="user" />
-            </user-service>
+            <jdbc-user-service data-source-ref="dataSource"
+                    users-by-username-query="
+		      select username,password, enabled
+		      from users where username=?"
+
+                     authorities-by-username-query="
+		      select users.username, user_roles.authority from users, user_roles
+ 			 where user_roles.user_id = users.user_id and users.username =? "
+             />
         </authentication-provider>
     </authentication-manager>
 </beans:beans>

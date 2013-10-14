@@ -43,15 +43,25 @@
             <div class="span7 offset1 well about-well">
                 <h2>Sign Up Now !</h2>
                 <ul class="unstyled" style="text-align: justify;">
-                    <li><em class="icon-tags"></em> <small> Find out the nearest store that has the cheapest price for fresh vegetables &amp; fruits before you go out for shopping !</small></li>
-                    <li><em class="icon-tags"></em> <small> Download our Mobile App and help us in getting the latest price from the stores near you !</small></li>
+                    <li><em class="icon-tags"></em> <small> Interact with friends in this site !</small></li>
+                    <li><em class="icon-tags"></em> <small> Download our Mobile App and help us in getting the latest new from the stores near you !</small></li>
                     <li><em class="icon-tags"></em> <small> Create your own shopping list before you go and buy ! </small></li>
                     <li><em class="icon-tags"></em> <small> Find out how much you can save over the month before only! </small></li>
                 </ul>
-                <a class="btn" href="#">More &lt;&lt;</a>
+                <a class="btn" href="#">More &gt;&gt;</a>
             </div>
         </div>
         </form>
+
+            <c:if test="${loginerror}">
+                <div class="errorblock">
+                            Invalid Username or Password <br>
+                            Please try again.
+                  </div>
+            </c:if>
+
+
+
 
          </div>
 		<script src="<c:url value="resources/js/bootstrap.js"/>"></script>
