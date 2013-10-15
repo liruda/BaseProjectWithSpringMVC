@@ -19,8 +19,8 @@
     </http>
 
     <authentication-manager>
-        <authentication-provider>
-            <jdbc-user-service data-source-ref="dataSource"
+        <authentication-provider user-service-ref="CustomUserService">
+       <!--     <jdbc-user-service data-source-ref="dataSource"
                     users-by-username-query="
 		      select username,password, enabled
 		      from users where username=?"
@@ -29,6 +29,11 @@
 		      select users.username, user_roles.authority from users, user_roles
  			 where user_roles.user_id = users.user_id and users.username =? "
              />
+
+          -->
+
         </authentication-provider>
     </authentication-manager>
+
+
 </beans:beans>

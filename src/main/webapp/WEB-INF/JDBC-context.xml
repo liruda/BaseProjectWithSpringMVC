@@ -12,5 +12,10 @@
         <property name="password" value="QrT7xv3x7Z9NGAFa" />
     </bean>
 
+    <bean id="CustomUserService"
+          class="com.liruda.domain.service.CustomUserService">
+
+    </bean>
+
 
 </beans>

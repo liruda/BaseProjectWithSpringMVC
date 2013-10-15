@@ -16,7 +16,7 @@ import javax.servlet.ServletException;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages="com.liruda.controller")
+@ComponentScan(basePackages="com.liruda")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Bean
