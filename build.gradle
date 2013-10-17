@@ -1,22 +1,48 @@
-apply plugin: 'war'
-apply plugin: 'jetty'
-apply plugin: 'eclipse-wtp'
-apply plugin: 'idea'
+apply plugin: "war"
+apply plugin: "jetty"
+apply plugin: "eclipse-wtp"
+apply plugin: "idea"
 
 repositories {
    mavenCentral()
 }
 
+ext{
+
+    servletApiVersion="2.5"
+    springVersion="3.2.2.RELEASE"
+    springSecurityVersion="3.1.0.RELEASE"
+    springDataJpaVersion="1.4.1.RELEASE"
+    mysqlConnectorVersion="5.1.9"
+    hibernateEntityVersion="3.6.3.Final"
+    log4jVersion="1.2.9"
+    jstlVersion="1.1.2"
+}
+
 dependencies {
-   providedCompile 'javax.servlet:servlet-api:2.5'
-   compile 'org.springframework:spring-webmvc:3.2.2.RELEASE'
-   compile 'org.springframework.security:spring-security-core:3.1.0.RELEASE'
-   compile 'org.springframework.security:spring-security-web:3.1.0.RELEASE'
-   compile 'org.springframework.security:spring-security-config:3.1.0.RELEASE'
-   compile 'log4j:log4j:1.2.9'
-   compile 'mysql:mysql-connector-java:5.1.9'
-   runtime 'javax.servlet:jstl:1.1.2'
+
+    //Servelet API
+   providedCompile "javax.servlet:servlet-api:$servletApiVersion"
+
+    //Spring core
+   compile "org.springframework:spring-webmvc:$springVersion"
+
+    //Spring security
+   compile "org.springframework.security:spring-security-core:$springSecurityVersion"
+   compile "org.springframework.security:spring-security-web:$springSecurityVersion"
+   compile "org.springframework.security:spring-security-config:$springSecurityVersion"
+
+   compile "mysql:mysql-connector-java:$mysqlConnectorVersion"
+   compile "log4j:log4j:$log4jVersion"
+   runtime "javax.servlet:jstl:$jstlVersion"
+
+    //AOP
+   runtime "org.springframework:spring-aspects:$springVersion"
+
+    //Hibernate and JPA
+   runtime "org.springframework.data:spring-data-jpa:$springDataJpaVersion"
+   runtime "org.hibernate:hibernate-entitymanager:$hibernateEntityVersion"
 }
 
 /* Change context path (base url). otherwise defaults to name of project */
-jettyRunWar.contextPath = '' 
+jettyRunWar.contextPath = "" 
