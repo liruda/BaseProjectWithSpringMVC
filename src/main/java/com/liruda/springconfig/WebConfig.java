@@ -14,12 +14,12 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
-@Configuration
-@EnableWebMvc
-@ComponentScan(basePackages="com.liruda")
+//@Configuration
+//@EnableWebMvc
+//@ComponentScan(basePackages="com.liruda.controller")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-	@Bean
+	//@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("/WEB-INF/view/");
