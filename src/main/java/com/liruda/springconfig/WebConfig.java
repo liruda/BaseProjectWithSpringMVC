@@ -15,7 +15,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 //@Configuration
-//@EnableWebMvc
+//@EnableWebMvc        //disable code-based configuration for now
 //@ComponentScan(basePackages="com.liruda.controller")
 public class WebConfig extends WebMvcConfigurerAdapter {
 

@@ -23,7 +23,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
         <param-value>
            /WEB-INF/applicationContext.xml
            /WEB-INF/security-app-context.xml
-           /WEB-INF/JDBC-context.xml
         </param-value>
     </context-param>
 
